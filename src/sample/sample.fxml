@@ -1,8 +1,37 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane alignment="center" hgap="10" minHeight="500.0" minWidth="800.0" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="sample.Controller">
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="120.0" />
+   </columnConstraints>
+   <children>
+      <Button mnemonicParsing="false" prefWidth="100.0" text="Browse" />
+      <Button mnemonicParsing="false" prefWidth="120.0" text="Encrypt FILE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" prefWidth="120.0" text="Encrypt TEXT" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField promptText="Input file path" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+      <TextField promptText="Output file path(with name)" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3" />
+      <Button mnemonicParsing="false" prefWidth="100.0" text="Browse" GridPane.rowIndex="1" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </GridPane>
