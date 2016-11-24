@@ -13,6 +13,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("EncryptorBSV");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setMinHeight(500);
+        primaryStage.setMinWidth(800);
         primaryStage.show();
     }
 
