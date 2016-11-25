@@ -1,10 +1,8 @@
 package sample;
 
+import encryptor.Encryptor;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -12,8 +10,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable{
@@ -25,6 +21,7 @@ public class Controller implements Initializable{
     public PasswordField passFieldKey;
     public TextArea txtAreaInput;
     public TextArea txtAreaOutput;
+    public Label labelStatus;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,13 +36,21 @@ public class Controller implements Initializable{
     }
 
     public void onActionBtnEncryptFile(){
+        int key;
+        try {
+            key = Integer.getInteger(passFieldKey.getText());
+        } catch (Exception e) {
+            labelStatus.setText("key must be an integer");
+        }
+        PrintWriter printWriter;
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save File");
         File outputFile = fileChooser.showSaveDialog(new Stage());
         if (outputFile != null){
             try {
-                outputFile.createNewFile();
-                Files.write();      //сделать запись текста в файл
+                printWriter = new PrintWriter(outputFile);
+                printWriter.println("Hello");
+                printWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -53,7 +58,17 @@ public class Controller implements Initializable{
     }
 
     public void onActionBtnEncryptText(){
-
+        int key = 0;
+        try {
+            key = Integer.parseInt(passFieldKey.getText());
+        } catch (Exception e) {
+            System.out.println(e);
+            labelStatus.setText("key must be an integer");
+        }
+        String inputText = txtAreaInput.getText();
+        System.out.println(inputText);
+        String encryptedText = Encryptor.encrypt(inputText, key);
+        txtAreaOutput.setText(encryptedText);
     }
 
     public void onActionPassFieldKey(){
