@@ -17,6 +17,7 @@ public class Controller implements Initializable{
     public Button btnBrowseInput;
     public Button btnEncryptFile;
     public Button btnEncryptText;
+    public Button btnDecryptText;
     public TextField txtFieldInput;
     public PasswordField passFieldKey;
     public TextArea txtAreaInput;
@@ -58,21 +59,22 @@ public class Controller implements Initializable{
     }
 
     public void onActionBtnEncryptText(){
-        int key = 0;
-        try {
-            key = Integer.parseInt(passFieldKey.getText());
-        } catch (Exception e) {
-            System.out.println(e);
-            labelStatus.setText("key must be an integer");
-        }
         String inputText = txtAreaInput.getText();
-        System.out.println(inputText);
+        int key = Encryptor.getASCII(passFieldKey.getText());
         String encryptedText = Encryptor.encrypt(inputText, key);
         txtAreaOutput.setText(encryptedText);
     }
 
-    public void onActionPassFieldKey(){
+    public void onActionBtnDecryptText(){
+        String inputText = txtAreaInput.getText();
+        int key = Encryptor.getASCII(passFieldKey.getText());
+        String encryptedText = Encryptor.decrypt(inputText, key);
+        txtAreaOutput.setText(encryptedText);
+    }
 
+    public void onActionPassFieldKey(){
+        int ikey = Encryptor.getASCII(passFieldKey.getText());
+        System.out.println(ikey);
     }
 
 }

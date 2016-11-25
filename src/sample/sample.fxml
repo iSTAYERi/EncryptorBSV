@@ -18,6 +18,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
    </rowConstraints>
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0" />
@@ -30,11 +31,12 @@
       <Button fx:id="btnBrowseInput" mnemonicParsing="false" onAction="#onActionBtnBrowseInput" prefWidth="100.0" text="Browse" />
       <Button fx:id="btnEncryptFile" mnemonicParsing="false" onAction="#onActionBtnEncryptFile" prefWidth="120.0" text="Encrypt FILE" GridPane.columnIndex="4" GridPane.rowIndex="3" />
       <Button fx:id="btnEncryptText" mnemonicParsing="false" onAction="#onActionBtnEncryptText" prefWidth="120.0" text="Encrypt TEXT" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+      <Button fx:id="btnDecryptText" mnemonicParsing="false" onAction="#onActionBtnDecryptText" prefWidth="120.0" text="Decrypt TEXT" GridPane.columnIndex="4" GridPane.rowIndex="5" />
       <TextField fx:id="txtFieldInput" promptText="Input file path" GridPane.columnIndex="1" GridPane.columnSpan="3" />
       <PasswordField fx:id="passFieldKey" onAction="#onActionPassFieldKey" promptText="Key" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-      <TextArea fx:id="txtAreaInput" prefHeight="200.0" prefWidth="200.0" promptText="Text to encrypt" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3" />
-      <TextArea fx:id="txtAreaOutput" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3" />
-      <Label fx:id="labelStatus" text="Hello, my friend!" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="5" />
+      <TextArea fx:id="txtAreaInput" prefHeight="200.0" prefWidth="200.0" promptText="Text to encrypt" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="4" />
+      <TextArea fx:id="txtAreaOutput" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="4" />
+      <Label fx:id="labelStatus" text="!!! Work only text ciphering !!!" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
